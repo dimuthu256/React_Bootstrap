@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "path": "../.."
+    },
+    {
+      "path": "../../../../ReactBootstrap"
+    },
+    {
+      "path": "../../../../BurgerBuilder/BurgerBuilder_React"
+    },
+    {
+      "path": "../../../../react-form-validation-demo"
+    }
+  ]
+}
