@@ -8,3 +8,9 @@
     margin: 0px 10% 0px 10%;
 }
 
+.panel {
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+}
+

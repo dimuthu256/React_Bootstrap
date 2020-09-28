@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Form, Button, Col } from 'react-bootstrap';
-import classes from './Contact.css';
+import React, { Component } from "react";
+import { Form, Button, Col} from "react-bootstrap";
+import classes from "./Contact.css";
+import { FormErrors } from "./FormErrors";
 
 class Contact extends Component {
   constructor(props) {
@@ -80,17 +81,44 @@ class Contact extends Component {
           human for food at 4am. Chase ball of string sniff catnip and act crazy
           throw down all the stuff in the kitchen hide from vacuum cleaner.
         </p>
+
+        <span className="panel panel-default">
+            <FormErrors formErrors={this.state.formErrors} />
+        </span>
+
         <div className={classes.ContactForm}>
           <Form className={classes.Form}>
             <Form.Row>
-              <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Group
+                as={Col}
+                controlId="formGridEmail"
+                className={`${this.errorClass(this.state.formErrors.email)}`}
+              >
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  name="email"
+                  required
+                  value={this.state.email}
+                  onChange={this.handleUserInput}
+                />
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Group
+                as={Col}
+                controlId="formGridPassword"
+                className={`${this.errorClass(this.state.formErrors.password)}`}
+              >
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  required
+                  value={this.state.password}
+                  onChange={this.handleUserInput}
+                />
               </Form.Group>
             </Form.Row>
 
@@ -128,7 +156,11 @@ class Contact extends Component {
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button
+              variant="primary"
+              type="submit"
+              disabled={!this.state.formValid}
+            >
               Submit
             </Button>
           </Form>

@@ -18,21 +18,18 @@ function App() {
       <header className="App-header">
         <React.Fragment>
           <Router>
-          <NavigationBar />
-          <Header/>
-            
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Layout>
-                    <Route path="/about" component={About} /> 
-                    <Route path="/contact" component={Contact} /> 
-                    <Route component={NoMatch} />
-                  </Layout> 
-                </Switch>
-           
+            <NavigationBar />
+            <Header />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Layout>
+                <Route path="/about" component={About} />
+                <Route path="/contact" component={Contact} />
+                <Route component={NoMatch} />
+              </Layout>
+            </Switch>
           </Router>
         </React.Fragment>
-        
       </header>
     </div>
   );
